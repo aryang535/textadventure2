@@ -77,12 +77,10 @@ Room* Room0_Build()
 /* TODO REQUIRED: Build room 1 |||            Landon Hilton */
 Room* Room1_Build()
 {
-	/* Pre-declare a room pointer which we will use to build the new room */
-	Room* room = NULL;
+	
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
 
-	/* TODO REQUIRED: Call Room_Create with the Room 1 description:
-	"This is room 1.  There is a large mirror here, and it shimmers as you approach.\n" */
-	room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+
 
 	/* TODO REQUIRED: Add an Exit "through the mirror" to Room 2 */
 	Room_AddRoomExit(room, "through the mirror", 2);
@@ -98,6 +96,26 @@ Room* Room1_Build()
 	/* TODO REQUIRED: Add a brick to the list of items in the room */
 	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
 	/* return the new room */
+	return room;
+}
+
+// Landon Hilton
+Room* Room8_Build()
+{
+
+
+	Room* room = Room_Create("DEBUG: This is a template - Include a description for the room here\n");
+
+
+	/* Exits
+	   add one or more exits to allow navigation between rooms */
+	Room_AddRoomExit(room, "north", 1);  /* 1 = the room index this exit connects to */
+
+	/* Items
+	   add items to the room */
+	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
+
+	/* Return the new room */
 	return room;
 }
 
@@ -125,17 +143,7 @@ Room* Room2_Build()
 }
 
 
-// Landon Hilton
-Room* Room8_Build()
-{
 
-
-
-
-
-
-
-}
 
 
 /* TODO ADVANCED: Build room 3 */
