@@ -149,6 +149,30 @@ Room* Room2_Build()
 /* TODO ADVANCED: Build room 3 */
 /* TODO ADVANCED: Build room 4 */
 
+Room* Room6_Build()
+{
+	/* TODO: Pre-declare a room pointer which we will use to build the new room */
+	Room* room = NULL;
+
+	room = Room_Create("This is room 6. This room is \n");
+
+	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
+	Room_AddRoomExit(room, "east", 0);
+	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
+	Room_AddRoomExit(room, "e", 0);
+	Room_AddRoomExit(room, "crack", 0);
+
+	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build());
+	/* return the new room */
+	return room;
+}
+
+Room* Room7_Build()
+{
+
+}
+
 
 /* ------------------------------------------------------- */
 /* Create the world data for a new game */
