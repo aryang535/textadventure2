@@ -74,7 +74,7 @@ Room* Room0_Build()
 }
 
 
-/* TODO REQUIRED: Build room 1 */
+/* TODO REQUIRED: Build room 1 |||            Landon Hilton */
 Room* Room1_Build()
 {
 	/* Pre-declare a room pointer which we will use to build the new room */
@@ -122,6 +122,19 @@ Room* Room2_Build()
 	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build());
 	/* return the new room */
 	return room;
+}
+
+
+// Landon Hilton
+Room* Room8_Build()
+{
+
+
+
+
+
+
+
 }
 
 
