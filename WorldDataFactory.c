@@ -128,6 +128,16 @@ Room* Room2_Build()
 /* TODO ADVANCED: Build room 3 */
 /* TODO ADVANCED: Build room 4 */
 
+Room* Room6_Build()
+{
+
+}
+
+Room* Room7_Build()
+{
+
+}
+
 
 /* ------------------------------------------------------- */
 /* Create the world data for a new game */
