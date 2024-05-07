@@ -75,45 +75,41 @@ Room* Room0_Build()
 
 
 /* TODO REQUIRED: Build room 1 |||            Landon Hilton */
-Room* Room1_Build()
+Room* Room2_Build()
 {
 	
-	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	// THE CHEESE CALLS TO ME AHHAHAHAHHAHAHAHAHAHAHHAHA
 
 
+	Room* room = Room_Create("You enter the cheese room. Cheese. Cheese. Cheese. Cheese. Cheese. Cheese. Hmmmmmmm Cheese. I love Cheese. There is cheese in the room. Do you want cheese?\n");
 
-	/* TODO REQUIRED: Add an Exit "through the mirror" to Room 2 */
-	Room_AddRoomExit(room, "through the mirror", 2);
-	/* TODO BASIC: Add exit shortcuts for "through mirror" and "mirror" */
-	Room_AddRoomExit(room, "through mirror", 2);
-	Room_AddRoomExit(room, "mirror", 2);
 
-	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
 	Room_AddRoomExit(room, "south", 0);
-	/* TODO BASIC: Add room exit shortcut for "s" */
-	Room_AddRoomExit(room, "s", 0);
 
-	/* TODO REQUIRED: Add a brick to the list of items in the room */
+
+
+	//change this to cheese once the cheese is made
 	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
+
+
 	/* return the new room */
 	return room;
 }
 
 // Landon Hilton
-Room* Room8_Build()
+Room* Room3_Build()
 {
 
 
-	Room* room = Room_Create("DEBUG: This is a template - Include a description for the room here\n");
+	Room* room = Room_Create("\n");
 
 
-	/* Exits
-	   add one or more exits to allow navigation between rooms */
-	Room_AddRoomExit(room, "north", 1);  /* 1 = the room index this exit connects to */
+	Room_AddRoomExit(room, "north", 4); 
 
 	/* Items
 	   add items to the room */
 	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
+
 
 	/* Return the new room */
 	return room;
@@ -175,6 +171,35 @@ Room* Room4_Build()
 Room* Room5_Build()
 {
 	return NULL;
+}
+
+Room* Room0_Build()
+{
+
+	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
+
+
+
+	Room_AddRoomExit(room, "north", 2);
+	//exit shortcuts
+	Room_AddRoomExit(room, "through mirror", 2);
+	Room_AddRoomExit(room, "mirror", 2);
+
+	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
+	Room_AddRoomExit(room, "south", 0);
+	/* TODO BASIC: Add room exit shortcut for "s" */
+	Room_AddRoomExit(room, "s", 0);
+
+	/* TODO REQUIRED: Add a brick to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
+	/* return the new room */
+	return room;
+}
+
+Room* Room1_Build()
+{
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	return room;
 }
 
 
