@@ -57,13 +57,13 @@ Room* Room0_Build()
 
 	Room_AddRoomExit(room, "north", 2);
 	//exit shortcuts
-	Room_AddRoomExit(room, "through mirror", 2);
-	Room_AddRoomExit(room, "mirror", 2);
+	Room_AddRoomExit(room, "rat room", 2);
+	Room_AddRoomExit(room, "rats", 2);
 
 	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
-	Room_AddRoomExit(room, "south", 0);
+	Room_AddRoomExit(room, "south", 1);
 	/* TODO BASIC: Add room exit shortcut for "s" */
-	Room_AddRoomExit(room, "s", 0);
+	Room_AddRoomExit(room, "ROOM", 1);
 
 	/* TODO REQUIRED: Add a brick to the list of items in the room */
 	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
