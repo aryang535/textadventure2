@@ -76,6 +76,9 @@
     <ClCompile Include="Source\WorldData.c">
       <Filter>World Data</Filter>
     </ClCompile>
+    <ClCompile Include="Cheese.c">
+      <Filter>World Data\Item Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommandContext.h">
@@ -170,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="Source\GoldPieceFunctions.h">
       <Filter>World Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Cheese.h">
+      <Filter>World Data\Item Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

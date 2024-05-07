@@ -84,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cheese.h" />
     <ClInclude Include="Source\BrickFunctions.h" />
     <ClInclude Include="Source\CommandContext.h" />
     <ClInclude Include="Source\CommandData.h" />
@@ -117,6 +118,7 @@
     <ClInclude Include="Source\WorldDataFactory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cheese.c" />
     <ClCompile Include="CommandListFactory.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Source\BrickFunctions.c" />

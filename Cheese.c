@@ -1,11 +1,10 @@
 /******************************************************************************
-filename    BrickFunctions.c
-author      Matthew Picioccio
-DP email    mattpic@digipen.edu
-course      GAM100 ** Do not use this code in your team project
+filename    CheeseFunctions.c
+author      Landon Hilton
+course      GAM100 
 
 Brief Description:
-This file defines the functions to create a specific item, the "brick".
+This file defines the functions to create a specific item, the "cheese".
 
 ******************************************************************************/
 #include "stdafx.h" /* UNREFERENCED_PARAMETER, NULL*/
@@ -18,7 +17,7 @@ This file defines the functions to create a specific item, the "brick".
 #include "Item.h" /* Item_Create */
 
 
-/* Helper: The action performed when the brick is taken. */
+/* Helper: The action performed when the cheese is taken. */
 void Cheese_Take(CommandContext context, GameState* gameState, WorldData* worldData)
 {
 	/* avoid W4 warnings on unused parameters - this function conforms to a function typedef */
@@ -26,7 +25,7 @@ void Cheese_Take(CommandContext context, GameState* gameState, WorldData* worldD
 	UNREFERENCED_PARAMETER(gameState);
 	UNREFERENCED_PARAMETER(worldData);
 
-	/* Give the user a hint about how the brick might be used, whenever it is picked up. */
+	/* Give the user a hint about how the cheese might be used, whenever it is picked up. */
 	printf("The Cheese feels heavy in your hand.\n");
 }
 
@@ -36,7 +35,7 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 {
 	Room* room; /* The current room */
 	ItemList** roomItemsPtr; /* The list of items in the current room */
-	Item* brick; /* The brick in the player's inventory */
+	Item* cheese; /* The brick in the player's inventory */
 
 	/* safety check on the parameters */
 	if ((gameState == NULL) || (worldData == NULL))
@@ -48,23 +47,23 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 	if (context != CommandContext_Item_Inventory)
 	{
 		/* the user doesn't have the brick - inform the user of the problem and take no action */
-		printf("You must have the brick before you can use it.\n");
+		printf("You must have the cheese before you can use it.\n");
 		return;
 	}
 
 	/* check if we're in the right room to use the item */
-	if (gameState->currentRoomIndex != 0)
+	if (gameState->currentRoomIndex != 1)
 	{
 		/* we are not in the right room - inform the user of the problem and take no action */
-		printf("You cannot use the brick here.\n");
+		printf("You cannot use the cheese here.\n");
 		return;
 	}
 
 	/* check if the cage has already been broken and scored */
-	if (GameFlags_IsInList(gameState->gameFlags, "cageBrokenScored"))
+	if (GameFlags_IsInList(gameState->gameFlags, "CheeseUsed"))
 	{
 		/* the player already used the brick - inform the user of the problem and take no action */
-		printf("You already used the brick here.\n");
+		printf("You already used the cheese here.\n");
 		return;
 	}
 	else
@@ -79,14 +78,14 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 			return; /* take no action, as something is wrong - we should always have an item list */
 		}
 
-		/* Find the brick in the player's inventory - it should be there, since we are in the Inventory context */
-		brick = ItemList_FindItem(gameState->inventory, "brick");
+		/* Find the cheese in the player's inventory - it should be there, since we are in the Inventory context */
+		cheese = ItemList_FindItem(gameState->inventory, "cheese");
 
-		/* Remove the brick from the user's inventory - they won't need it again */
-		gameState->inventory = ItemList_Remove(gameState->inventory, brick);
+		/* Remove the cheese from the user's inventory - they won't need it again */
+		gameState->inventory = ItemList_Remove(gameState->inventory, cheese);
 
 		/* Tell the user what they did */
-		printf("You smash the cage open with the brick, and the brick crumbles.  You can now reach the small egg inside.\n");
+		printf("You command the rats with the Cheese. A man upon his throne. A sword of Cheese.\n");
 
 		/* Add to the player's score */
 		GameState_ChangeScore(gameState, 10);
@@ -98,7 +97,7 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 		*roomItemsPtr = ItemList_Add(*roomItemsPtr, Egg_Build());
 
 		/* the gold piece has not been scored, so mark the flag */
-		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "cageBrokenScored");
+		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "CheeseUsed");
 	}
 }
 
@@ -107,5 +106,5 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 Item* Brick_Build()
 {
 	/* Create a "brick" item, using the functions defined in this file */
-	return Item_Create("brick", "A small red brick of indeterminate origin", true, Brick_Use, Brick_Take, NULL);
+	return Item_Create("Cheese", "Cheese", true, Cheese_Use, Cheese_Take, NULL);
 }
