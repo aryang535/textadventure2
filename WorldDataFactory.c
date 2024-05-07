@@ -48,31 +48,34 @@ Room* RoomN_Build()
 	//https://1drv.ms/p/s!Ah3nZBWhZQF1cRQUItK3veuk7F8?e=gjecZV
 }
 
-
-/* TODO REQUIRED: Build room 0 */
 Room* Room0_Build()
 {
-	/* Pre-declare a room pointer which we will use to build the new room */
-	Room* room = NULL;
 
-	/* TODO REQUIRED: Call Room_Create with the Room 1 description:
-	"This is room 0. It is a display room with a cage in the middle. You can see a jeweled egg inside the cage.  There is a crack in the west wall, but you can't fit through it from this side.\n" */
-	room = Room_Create("This is room 0. It is a display room with a cage in the middle. You can see a jeweled egg inside the cage.  There is a crack in the west wall, but you can't fit through it from this side.\n");
+	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
 
-	/* TODO REQUIRED: Add an Exit "north" to Room 1 */
-	Room_AddRoomExit(room, "north", 1);
-	/* TODO BASIC: Add room exit shortcut for "n" */
-	Room_AddRoomExit(room, "n", 1);
 
-	/* TODO REQUIRED: add an exit door to the list of items in the room, ExitDoor_Build() */
-	ExitDoor_Build();
 
-	/* TODO ADVANCED: (not required) update the description and add a room exit to the "east" */
+	Room_AddRoomExit(room, "north", 2);
+	//exit shortcuts
+	Room_AddRoomExit(room, "through mirror", 2);
+	Room_AddRoomExit(room, "mirror", 2);
 
+	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
+	Room_AddRoomExit(room, "south", 0);
+	/* TODO BASIC: Add room exit shortcut for "s" */
+	Room_AddRoomExit(room, "s", 0);
+
+	/* TODO REQUIRED: Add a brick to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
 	/* return the new room */
 	return room;
 }
 
+Room* Room1_Build()
+{
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	return room;
+}
 
 /* TODO REQUIRED: Build room 1 |||            Landon Hilton */
 Room* Room2_Build()
@@ -171,35 +174,6 @@ Room* Room4_Build()
 Room* Room5_Build()
 {
 	return NULL;
-}
-
-Room* Room0_Build()
-{
-
-	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
-
-
-
-	Room_AddRoomExit(room, "north", 2);
-	//exit shortcuts
-	Room_AddRoomExit(room, "through mirror", 2);
-	Room_AddRoomExit(room, "mirror", 2);
-
-	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
-	Room_AddRoomExit(room, "south", 0);
-	/* TODO BASIC: Add room exit shortcut for "s" */
-	Room_AddRoomExit(room, "s", 0);
-
-	/* TODO REQUIRED: Add a brick to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
-	/* return the new room */
-	return room;
-}
-
-Room* Room1_Build()
-{
-	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
-	return room;
 }
 
 
