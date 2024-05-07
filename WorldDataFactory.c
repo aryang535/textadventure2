@@ -173,16 +173,15 @@ Room* Room7_Build()
 
 }
 
-Room* Room3_Build()
+Room* Room0_Build()
 {
 
-	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
 
 
 
-	/* TODO REQUIRED: Add an Exit "through the mirror" to Room 2 */
-	Room_AddRoomExit(room, "through the mirror", 2);
-	/* TODO BASIC: Add exit shortcuts for "through mirror" and "mirror" */
+	Room_AddRoomExit(room, "north", 2);
+	//exit shortcuts
 	Room_AddRoomExit(room, "through mirror", 2);
 	Room_AddRoomExit(room, "mirror", 2);
 
@@ -197,7 +196,7 @@ Room* Room3_Build()
 	return room;
 }
 
-Room* Room4_Build()
+Room* Room1_Build()
 {
 	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
 	return room;
