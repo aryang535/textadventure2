@@ -173,6 +173,36 @@ Room* Room7_Build()
 
 }
 
+Room* Room3_Build()
+{
+
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+
+
+
+	/* TODO REQUIRED: Add an Exit "through the mirror" to Room 2 */
+	Room_AddRoomExit(room, "through the mirror", 2);
+	/* TODO BASIC: Add exit shortcuts for "through mirror" and "mirror" */
+	Room_AddRoomExit(room, "through mirror", 2);
+	Room_AddRoomExit(room, "mirror", 2);
+
+	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
+	Room_AddRoomExit(room, "south", 0);
+	/* TODO BASIC: Add room exit shortcut for "s" */
+	Room_AddRoomExit(room, "s", 0);
+
+	/* TODO REQUIRED: Add a brick to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
+	/* return the new room */
+	return room;
+}
+
+Room* Room4_Build()
+{
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	return room;
+}
+
 
 /* ------------------------------------------------------- */
 /* Create the world data for a new game */
