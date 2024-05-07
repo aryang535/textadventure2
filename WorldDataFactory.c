@@ -149,28 +149,32 @@ Room* Room2_Build()
 /* TODO ADVANCED: Build room 3 */
 /* TODO ADVANCED: Build room 4 */
 
-Room* Room6_Build()
+#include "SkibidiToilet.h"
+
+
+/*
+* The player discovers the SkibidiToilet. If the player is to flush this skibidi toilet, it drowns the player.
+*/
+Room* Room4_Build()
 {
 	/* TODO: Pre-declare a room pointer which we will use to build the new room */
 	Room* room = NULL;
 
-	room = Room_Create("This is room 6. This room is \n");
+	room = Room_Create("This is room 4. In this room, you see a throne, of which the Rat King is currently seated.\n");
 
-	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
-	Room_AddRoomExit(room, "east", 0);
-	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
-	Room_AddRoomExit(room, "e", 0);
-	Room_AddRoomExit(room, "crack", 0);
+	//Room_AddRoomExit(room, "south", 3);
+	//Room_AddRoomExit(room, "east", 5);
+	//Room_AddRoomExit(room, "west", 1);
 
 	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build());
+	ItemList_AddItem(Room_GetItemList(room), RatTrap_Build());
 	/* return the new room */
 	return room;
 }
 
-Room* Room7_Build()
+Room* Room5_Build()
 {
-
+	return NULL;
 }
 
 
