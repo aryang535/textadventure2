@@ -74,7 +74,7 @@ void Key1_Use(CommandContext context, GameState* gameState, WorldData* worldData
 		gameState->inventory = ItemList_Remove(gameState->inventory, brick);
 
 		/* Tell the user what they did */
-		printf("You insert the hotdog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience. Your hand is covered in ketchup and mustard and mysterious moldy hot dog sludge.\n");
+		printf("You insert the hotdog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience.\n");
 
 		printf("Exit added bruh: North\n");
 		Room_AddRoomExit(WorldData_GetRoom(worldData, 0), "north", 2);
@@ -89,5 +89,5 @@ Item* Key1_Build()
 
 
 	/* Create a "brick" item, using the functions defined in this file */
-	return Item_Create("hotdog", "An old hotdog covered in mustard, ketchup, relish, and rat feces. Reeks of dead rats. Absolutely disguting. Not safe for consumption.", true, Key1_Use, NULL, NULL);
+	return Item_Create("hotdog", "A hotdog. Reeks of dead rats. Absolutely disguting. Not safe for consumption.", true, Key1_Use, NULL, NULL);
 }
