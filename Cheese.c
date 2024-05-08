@@ -104,5 +104,5 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 Item* Cheese_Build()
 {
 	/* Create a "cheese" item, using the functions defined in this file */
-	return Item_Create("Cheese", "Cheese", true, Cheese_Use, Cheese_Take, NULL);
+	return Item_Create("cheese", "cheese", true, Cheese_Use, Cheese_Take, NULL);
 }
