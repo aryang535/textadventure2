@@ -42,5 +42,5 @@ void RatTrap_Drop(CommandContext context, GameState* gameState, WorldData* world
 
 Item* RatTrap_Build()
 {
-	return Item_Create("rat_trap", "The Rat Trap is a rat trap.", true, RatTrap_Use, NULL, RatTrap_Drop);
+	return Item_Create("rat_trap", "The Rat Trap is a rat trap. User's Discretion is advised.", true, RatTrap_Use, NULL, RatTrap_Drop);
 }
