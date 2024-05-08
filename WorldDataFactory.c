@@ -53,17 +53,8 @@ Room* Room0_Build()
 
 	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
 
-
-
-	Room_AddRoomExit(room, "north", 2);
-	//exit shortcuts
-
 	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
 	Room_AddRoomExit(room, "south", 1);
-	/* TODO BASIC: Add room exit shortcut for "s" */
-
-	/* TODO REQUIRED: Add a brick to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), NULL);
 	/* return the new room */
 	return room;
 }
