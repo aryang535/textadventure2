@@ -139,11 +139,8 @@ Room* Room4_Build()
 
 	//Room_AddRoomExit(room, "south", 3);
 	//Room_AddRoomExit(room, "east", 5);
-	//Room_AddRoomExit(room, "west", 1);
+	Room_AddRoomExit(room, "west", 1);
 
-	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), RatTrap_Build());
-	/* return the new room */
 	return room;
 }
 
