@@ -107,7 +107,7 @@ Room* Room3_Build()
 
 
 	/* Items add items to the room */
-	ItemList_AddItem(Room_GetItemList(room), Cheese_Build());
+	ItemList_AddItem(Room_GetItemList(room), RatTrap_Build());
 
 
 	/* Return the new room */

@@ -85,13 +85,14 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 		gameState->inventory = ItemList_Remove(gameState->inventory, cheese);
 
 		/* Tell the user what they did */
-		printf("You command the rats with the Cheese. A man upon his throne. A sword of Cheese.\n");
+		printf("You command the rats with the Cheese. A man upon his throne. A sword of Cheese. The rats now follow you.\n");
 
-		/* Add to the player's score */
-		GameState_ChangeScore(gameState, 10);
 
 		/* Update the room description to reflect the change in the room */
-		Room_SetDescription(room, "The rats now follow you.\n");
+		Room_SetDescription(room, "The rats have eaten through the door.\n");
+
+		/* Adds an exit to room 1 */
+		Room_AddRoomExit(WorldData_GetRoom(worldData, 1), "east", 4);
 
 		/* the gold piece has not been scored, so mark the flag */
 		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "CheeseUsed");
