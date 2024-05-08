@@ -53,7 +53,7 @@ Room* Room0_Build()
 
 	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
 
-	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
+	/* TODO REQUIRED: Add an Exit "south" back to Room 1 */
 	Room_AddRoomExit(room, "south", 1);
 	/* return the new room */
 	return room;
@@ -63,7 +63,7 @@ Room* Room1_Build()
 {
 	Room* room = Room_Create("This is the rat room. This room has rats. It is like the rubber room. The rubber room with the rats. Also. All the rats are deadly. Killer rats.\n");
 
-	Room_AddRoomExit(room, "north", 2);
+	Room_AddRoomExit(room, "north", 0);
 
 	/* TODO REQUIRED: Add a brick to the list of items in the room */
 	ItemList_AddItem(Room_GetItemList(room), Key1_Build());
