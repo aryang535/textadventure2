@@ -23,7 +23,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 	if (context != CommandContext_Item_Inventory)
 	{
 		/* the user doesn't have the brick - inform the user of the problem and take no action */
-		printf("You must have the brick before you can use it.\n");
+		printf("Are you delusional? Are you crazy? Did the rats finally got to you? YOU DON'T HAVE ONE!!! WHAT AN IDIOT!! NEVER HAVE I MET SOMEONE SO STUPID!!!!\n");
 		return;
 	}
 
@@ -31,7 +31,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 	if (gameState->currentRoomIndex != 0)
 	{
 		/* we are not in the right room - inform the user of the problem and take no action */
-		printf("You cannot use the brick here.\n");
+		printf("HOW STUPID CAN YOU POSSIBLY BE TO EVEN THINK THAT YOU COULD POSSIBLY USE THAT HERE?!? THERE IS NO INDICATOR WHATSOEVER!!! WHAT AN IDIOT!! EVERYONE LAUGH AT THIS IMBECILE!!! HAHAHAHAHAHAHAA!!\n");
 		return;
 	}
 
@@ -39,7 +39,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 	if (GameFlags_IsInList(gameState->gameFlags, "cageBrokenScored"))
 	{
 		/* the player already used the brick - inform the user of the problem and take no action */
-		printf("You already used the brick here.\n");
+		printf("Pray, elucidate unto me what DELUSIONS could have possibly infiltrated your SINGULAR BRAIN CELL that you could POSSIBLY think to use an item AFTER YOU NO LONGER HAVE IT!! \n");
 		return;
 	}
 	else
@@ -61,7 +61,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 		gameState->inventory = ItemList_Remove(gameState->inventory, brick);
 
 		/* Tell the user what they did */
-		printf("You smash the cage open with the brick, and the brick crumbles.  You can now reach the small egg inside.\n");
+		printf("You insert the hot dog into the suspiciously hotdog shaped hole with a noticable squelch\n");
 
 		/* Add to the player's score */
 		GameState_ChangeScore(gameState, 10);
