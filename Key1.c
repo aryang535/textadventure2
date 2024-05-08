@@ -7,7 +7,20 @@
 #include "ItemList.h" /* ItemList_FindItem, ItemList_Remove, ItemList_Add */
 #include "Item.h" /* Item_Create */
 
-void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldData)
+
+/* Helper: The action performed when the hotdog is taken. */
+void Key1_Take(CommandContext context, GameState* gameState, WorldData* worldData)
+{
+	/* avoid W4 warnings on unused parameters - this function conforms to a function typedef */
+	UNREFERENCED_PARAMETER(context);
+	UNREFERENCED_PARAMETER(gameState);
+	UNREFERENCED_PARAMETER(worldData);
+
+	/* Give the user a hint about how the cheese might be used, whenever it is picked up. */
+	printf("You are now holding the hotdog. If only there was a suspiciously hotdog shaped hole nearby that you could put this hotdog into.\n");
+}
+
+void Key1_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 {
 	Room* room; /* The current room */
 	ItemList** roomItemsPtr; /* The list of items in the current room */
@@ -36,7 +49,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 	}
 
 	/* check if the cage has already been broken and scored */
-	if (GameFlags_IsInList(gameState->gameFlags, "cageBrokenScored"))
+	if (GameFlags_IsInList(gameState->gameFlags, "hotdogUsed"))
 	{
 		/* the player already used the brick - inform the user of the problem and take no action */
 		printf("Pray, elucidate unto me what DELUSIONS could have possibly infiltrated your SINGULAR BRAIN CELL that you could POSSIBLY think to use an item AFTER YOU NO LONGER HAVE IT!! \n");
@@ -55,25 +68,19 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 		}
 
 		/* Find the brick in the player's inventory - it should be there, since we are in the Inventory context */
-		brick = ItemList_FindItem(gameState->inventory, "brick");
+		brick = ItemList_FindItem(gameState->inventory, "hotdog");
 
 		/* Remove the brick from the user's inventory - they won't need it again */
 		gameState->inventory = ItemList_Remove(gameState->inventory, brick);
 
 		/* Tell the user what they did */
-		printf("You insert the hot dog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience. Your hand is covered in ketchup and mustard and mysterious moldy hot dog sludge.\n");
+		printf("You insert the hotdog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience. Your hand is covered in ketchup and mustard and mysterious moldy hot dog sludge.\n");
 
-		/* Add to the player's score */
-		GameState_ChangeScore(gameState, 10);
-
-		/* Update the room description to reflect the change in the room */
-		Room_SetDescription(room, "This is room 0.  You are in a display room.  There is a broken cage here.\n");
-
-		/* Add an egg to the current room, since the cage has been bashed open */
-		*roomItemsPtr = ItemList_Add(*roomItemsPtr, Egg_Build());
+		printf("Exit added bruh: North\n");
+		Room_AddRoomExit(WorldData_GetRoom(worldData, 0), "north", 2);
 
 		/* the gold piece has not been scored, so mark the flag */
-		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "cageBrokenScored");
+		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "hotdogUsed");
 	}
 }
 
@@ -82,5 +89,5 @@ Item* Key1_Build()
 
 
 	/* Create a "brick" item, using the functions defined in this file */
-	return Item_Create("key", "IT IS A KEY", true, Brick_Use, NULL, NULL);
+	return Item_Create("hotdog", "An old hotdog covered in mustard, ketchup, relish, and rat feces. Reeks of dead rats. Absolutely disguting. Not safe for consumption.", true, Brick_Use, NULL, NULL);
 }
