@@ -55,10 +55,6 @@ Room* Room0_Build()
 
 	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
 	Room_AddRoomExit(room, "south", 1);
-	/* TODO BASIC: Add room exit shortcut for "s" */
-
-	/* TODO REQUIRED: Add a brick to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), NULL);
 	/* return the new room */
 	return room;
 }
