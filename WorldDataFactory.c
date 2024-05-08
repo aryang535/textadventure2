@@ -131,13 +131,16 @@ Room* Room4_Build()
 	//Room_AddRoomExit(room, "south", 3);
 	//Room_AddRoomExit(room, "east", 5);
 	Room_AddRoomExit(room, "west", 1);
+	Room_AddRoomExit(room, "south", 3);
 
 	return room;
 }
 
 Room* Room5_Build()
 {
-	return NULL;
+	Room* room = Room_Create("This is room 5. In this room, you see a throne. However, this throne has no one seated. It is now for you. You have won.\n");
+
+	return room;
 }
 
 
