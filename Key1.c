@@ -76,7 +76,7 @@ void Key1_Use(CommandContext context, GameState* gameState, WorldData* worldData
 		/* Tell the user what they did */
 		printf("You insert the hotdog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience.\n");
 
-		printf("Exit added bruh: North\n");
+		printf("You can now go north to the cheese room\n");
 		Room_AddRoomExit(WorldData_GetRoom(worldData, 0), "north", 2);
 
 		/* the gold piece has not been scored, so mark the flag */
