@@ -61,7 +61,7 @@ void Brick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 		gameState->inventory = ItemList_Remove(gameState->inventory, brick);
 
 		/* Tell the user what they did */
-		printf("You insert the hot dog into the suspiciously hotdog shaped hole with a noticable squelch\n");
+		printf("You insert the hot dog into the suspiciously hotdog shaped hole with a noticable squelch. It is an extremely uncomfortable experience. Your hand is covered in ketchup and mustard and mysterious moldy hot dog sludge.\n");
 
 		/* Add to the player's score */
 		GameState_ChangeScore(gameState, 10);
