@@ -84,11 +84,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClInclude Include="Cheese.h" />
-=======
     <ClInclude Include="SkibidiToilet.h" />
->>>>>>> bb13d97a8348d5a77015da6b06339d729f879000
     <ClInclude Include="Source\BrickFunctions.h" />
     <ClInclude Include="Source\CommandContext.h" />
     <ClInclude Include="Source\CommandData.h" />
