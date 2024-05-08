@@ -81,18 +81,14 @@ Room* Room1_Build()
 Room* Room2_Build()
 {
 	
-	// THE CHEESE CALLS TO ME AHHAHAHAHHAHAHAHAHAHAHHAHA
-
-
 	Room* room = Room_Create("You enter the cheese room. Cheese. Cheese. Cheese. Cheese. Cheese. Cheese. Hmmmmmmm Cheese. I love Cheese. There is cheese in the room. Do you want cheese?\n");
 
 
 	Room_AddRoomExit(room, "south", 0);
 
 
-
 	//change this to cheese once the cheese is made
-	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
+	ItemList_AddItem(Room_GetItemList(room), Cheese_Build());
 
 
 	/* return the new room */
@@ -104,14 +100,14 @@ Room* Room3_Build()
 {
 
 
-	Room* room = Room_Create("\n");
+	Room* room = Room_Create("The room is empty. What did you think there would be? There is definitely nothing here.\n");
 
 
-	Room_AddRoomExit(room, "north", 4); 
+	Room_AddRoomExit(room, "north", 4);
 
-	/* Items
-	   add items to the room */
-	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
+
+	/* Items add items to the room */
+	ItemList_AddItem(Room_GetItemList(room), Cheese_Build());
 
 
 	/* Return the new room */

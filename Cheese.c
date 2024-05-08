@@ -91,10 +91,7 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 		GameState_ChangeScore(gameState, 10);
 
 		/* Update the room description to reflect the change in the room */
-		Room_SetDescription(room, "This is room 0.  You are in a display room.  There is a broken cage here.\n");
-
-		/* Add an egg to the current room, since the cage has been bashed open */
-		*roomItemsPtr = ItemList_Add(*roomItemsPtr, Egg_Build());
+		Room_SetDescription(room, "The rats now follow you.\n");
 
 		/* the gold piece has not been scored, so mark the flag */
 		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "CheeseUsed");
@@ -102,9 +99,9 @@ void Cheese_Use(CommandContext context, GameState* gameState, WorldData* worldDa
 }
 
 
-/* Build a "brick" object */
-Item* Brick_Build()
+/* Build a "cheese" object */
+Item* Cheese_Build()
 {
-	/* Create a "brick" item, using the functions defined in this file */
+	/* Create a "cheese" item, using the functions defined in this file */
 	return Item_Create("Cheese", "Cheese", true, Cheese_Use, Cheese_Take, NULL);
 }
