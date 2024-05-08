@@ -57,23 +57,26 @@ Room* Room0_Build()
 
 	Room_AddRoomExit(room, "north", 2);
 	//exit shortcuts
-	Room_AddRoomExit(room, "through mirror", 2);
-	Room_AddRoomExit(room, "mirror", 2);
 
 	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
-	Room_AddRoomExit(room, "south", 0);
+	Room_AddRoomExit(room, "south", 1);
 	/* TODO BASIC: Add room exit shortcut for "s" */
-	Room_AddRoomExit(room, "s", 0);
 
 	/* TODO REQUIRED: Add a brick to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
+	ItemList_AddItem(Room_GetItemList(room), NULL);
 	/* return the new room */
 	return room;
 }
 
 Room* Room1_Build()
 {
-	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	Room* room = Room_Create("This is the rat room. This room has rats. It is like the rubber room. The rubber room with the rats. But this room is not rubber. This room is made out of cram, laid in the sun for a fortnite. Cram room. Cram pryviously laid in the sun for a fortnite becomes harder than steel. Also. All the rats are deadly. Killer rats.\n");
+
+	Room_AddRoomExit(room, "north", 2);
+
+	/* TODO REQUIRED: Add a brick to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), Key1_Build());
+	/* return the new room */
 	return room;
 }
 
