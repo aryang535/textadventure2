@@ -7,5 +7,5 @@
 typedef struct Item Item;
 
 
-/* Build a "SkibidiToilet" object */
+/* Build a "RatTrap" object */
 Item* RatTrap_Build();
