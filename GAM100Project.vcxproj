@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Cheese.h" />
+    <ClInclude Include="Key1.h" />
     <ClInclude Include="SkibidiToilet.h" />
     <ClInclude Include="Source\BrickFunctions.h" />
     <ClInclude Include="Source\CommandContext.h" />
@@ -121,6 +122,7 @@
   <ItemGroup>
     <ClCompile Include="Cheese.c" />
     <ClCompile Include="CommandListFactory.c" />
+    <ClCompile Include="Key1.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="SkibidiToilet.c" />
     <ClCompile Include="Source\BrickFunctions.c" />

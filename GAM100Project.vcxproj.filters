@@ -77,9 +77,12 @@
       <Filter>World Data</Filter>
     </ClCompile>
     <ClCompile Include="Cheese.c">
-		<Filter>World Data\Item Functions</Filter>
+      <Filter>World Data\Item Functions</Filter>
     </ClCompile>
     <ClCompile Include="SkibidiToilet.c">
+      <Filter>World Data\Item Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Key1.c">
       <Filter>World Data\Item Functions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -178,9 +181,12 @@
       <Filter>World Data</Filter>
     </ClInclude>
     <ClInclude Include="Cheese.h">
-		<Filter>World Data\Item Functions</Filter>
+      <Filter>World Data\Item Functions</Filter>
     </ClInclude>
     <ClInclude Include="SkibidiToilet.h">
+      <Filter>World Data\Item Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Key1.h">
       <Filter>World Data\Item Functions</Filter>
     </ClInclude>
   </ItemGroup>
