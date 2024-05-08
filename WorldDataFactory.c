@@ -70,7 +70,7 @@ Room* Room0_Build()
 
 Room* Room1_Build()
 {
-	Room* room = Room_Create("This is the rat room. This room has rats. It is like the rubber room. The rubber room with the rats. But this room is not rubber. This room is made out of cram, laid in the sun for a fortnite. Cram room. Cram pryviously laid in the sun for a fortnite becomes harder than steel. Also. All the rats are deadly. Killer rats.\n");
+	Room* room = Room_Create("This is the rat room. This room has rats. It is like the rubber room. The rubber room with the rats. Also. All the rats are deadly. Killer rats.\n");
 
 	Room_AddRoomExit(room, "north", 2);
 
