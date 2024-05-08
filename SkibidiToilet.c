@@ -36,8 +36,8 @@ void RatTrap_Drop(CommandContext context, GameState* gameState, WorldData* world
 		return; /* take no action if the parameters are invalid */
 	}
 	
-	printf("Ding Ding Ding! A new room exit has been made! South.\n");
-	Room_AddRoomExit(WorldData_GetRoom(worldData, gameState->currentRoomIndex), "south", 3);
+	printf("Ding Ding Ding! A new room exit has been made! East.\n");
+	Room_AddRoomExit(WorldData_GetRoom(worldData, 4), "east", 5);
 }
 
 Item* RatTrap_Build()
