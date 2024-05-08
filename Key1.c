@@ -9,7 +9,7 @@
 
 
 /* Helper: The action performed when the hotdog is taken. */
-void Key1_Take(CommandContext context, GameState* gameState, WorldData* worldData)
+void _Take(CommandContext context, GameState* gameState, WorldData* worldData)
 {
 	/* avoid W4 warnings on unused parameters - this function conforms to a function typedef */
 	UNREFERENCED_PARAMETER(context);
@@ -89,5 +89,5 @@ Item* Key1_Build()
 
 
 	/* Create a "brick" item, using the functions defined in this file */
-	return Item_Create("hotdog", "An old hotdog covered in mustard, ketchup, relish, and rat feces. Reeks of dead rats. Absolutely disguting. Not safe for consumption.", true, Brick_Use, NULL, NULL);
+	return Item_Create("hotdog", "An old hotdog covered in mustard, ketchup, relish, and rat feces. Reeks of dead rats. Absolutely disguting. Not safe for consumption.", true, Key1_Use, NULL, NULL);
 }
