@@ -76,7 +76,11 @@
     <ClCompile Include="Source\WorldData.c">
       <Filter>World Data</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Cheese.c">
+=======
+    <ClCompile Include="SkibidiToilet.c">
+>>>>>>> bb13d97a8348d5a77015da6b06339d729f879000
       <Filter>World Data\Item Functions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -174,7 +178,11 @@
     <ClInclude Include="Source\GoldPieceFunctions.h">
       <Filter>World Data</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Cheese.h">
+=======
+    <ClInclude Include="SkibidiToilet.h">
+>>>>>>> bb13d97a8348d5a77015da6b06339d729f879000
       <Filter>World Data\Item Functions</Filter>
     </ClInclude>
   </ItemGroup>

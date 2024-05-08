@@ -48,31 +48,34 @@ Room* RoomN_Build()
 	//https://1drv.ms/p/s!Ah3nZBWhZQF1cRQUItK3veuk7F8?e=gjecZV
 }
 
-
-/* TODO REQUIRED: Build room 0 */
 Room* Room0_Build()
 {
-	/* Pre-declare a room pointer which we will use to build the new room */
-	Room* room = NULL;
 
-	/* TODO REQUIRED: Call Room_Create with the Room 1 description:
-	"This is room 0. It is a display room with a cage in the middle. You can see a jeweled egg inside the cage.  There is a crack in the west wall, but you can't fit through it from this side.\n" */
-	room = Room_Create("This is room 0. It is a display room with a cage in the middle. You can see a jeweled egg inside the cage.  There is a crack in the west wall, but you can't fit through it from this side.\n");
+	Room* room = Room_Create("This is the rubber room. The rubber room with rats. The rats make you crazy. Crazy? You were crazy once. You were locked in a room. A rubber room. The rubber room makes you crazy. \n");
 
-	/* TODO REQUIRED: Add an Exit "north" to Room 1 */
-	Room_AddRoomExit(room, "north", 1);
-	/* TODO BASIC: Add room exit shortcut for "n" */
-	Room_AddRoomExit(room, "n", 1);
 
-	/* TODO REQUIRED: add an exit door to the list of items in the room, ExitDoor_Build() */
-	ExitDoor_Build();
 
-	/* TODO ADVANCED: (not required) update the description and add a room exit to the "east" */
+	Room_AddRoomExit(room, "north", 2);
+	//exit shortcuts
+	Room_AddRoomExit(room, "through mirror", 2);
+	Room_AddRoomExit(room, "mirror", 2);
 
+	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
+	Room_AddRoomExit(room, "south", 0);
+	/* TODO BASIC: Add room exit shortcut for "s" */
+	Room_AddRoomExit(room, "s", 0);
+
+	/* TODO REQUIRED: Add a brick to the list of items in the room */
+	ItemList_AddItem(Room_GetItemList(room), Brick_Build());
 	/* return the new room */
 	return room;
 }
 
+Room* Room1_Build()
+{
+	Room* room = Room_Create("This is room 1.  There is a large mirror here, and it shimmers as you approach.\n");
+	return room;
+}
 
 /* TODO REQUIRED: Build room 1 |||            Landon Hilton */
 Room* Room2_Build()
@@ -116,57 +119,38 @@ Room* Room3_Build()
 }
 
 
-/* TODO REQUIRED: Build room 2 */
-Room* Room2_Build()
-{
-	/* TODO: Pre-declare a room pointer which we will use to build the new room */
-	Room* room = NULL;
-
-	/* TODO REQUIRED: Call Room_Create with the Room 2 description:
-	"This is room 2.  The room is isolated from the others, but you can see a crack in the east wall, just large enough to get through.\n" */
-	room = Room_Create("This is room 2.  The room is isolated from the others, but you can see a crack in the east wall, just large enough to get through.\n");
-
-	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
-	Room_AddRoomExit(room, "east", 0);
-	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
-	Room_AddRoomExit(room, "e", 0);
-	Room_AddRoomExit(room, "crack", 0);
-
-	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build());
-	/* return the new room */
-	return room;
-}
-
-
 
 
 
 /* TODO ADVANCED: Build room 3 */
 /* TODO ADVANCED: Build room 4 */
 
-Room* Room6_Build()
+#include "SkibidiToilet.h"
+
+
+/*
+* The player discovers the SkibidiToilet. If the player is to flush this skibidi toilet, it drowns the player.
+*/
+Room* Room4_Build()
 {
 	/* TODO: Pre-declare a room pointer which we will use to build the new room */
 	Room* room = NULL;
 
-	room = Room_Create("This is room 6. This room is \n");
+	room = Room_Create("This is room 4. In this room, you see a throne, of which the Rat King is currently seated.\n");
 
-	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
-	Room_AddRoomExit(room, "east", 0);
-	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
-	Room_AddRoomExit(room, "e", 0);
-	Room_AddRoomExit(room, "crack", 0);
+	//Room_AddRoomExit(room, "south", 3);
+	//Room_AddRoomExit(room, "east", 5);
+	//Room_AddRoomExit(room, "west", 1);
 
 	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build());
+	ItemList_AddItem(Room_GetItemList(room), RatTrap_Build());
 	/* return the new room */
 	return room;
 }
 
-Room* Room7_Build()
+Room* Room5_Build()
 {
-
+	return NULL;
 }
 
 
@@ -180,16 +164,19 @@ WorldData* CreateInitialWorldData()
 
 	/* TODO REQUIRED: update room count to match the number of rooms you have created and added to the world
 	   if this number doesn't match then your game will either crash or you will end up stuck in a broken room with no exits */
-	int roomCount = 3;
+	int roomCount = 6;
 
 	/* create the new WorldData object with 3 rooms */
-	worldData = WorldData_Create("Welcome to my GAM100 Game!\n\n", roomCount);
+	worldData = WorldData_Create("Welcome to Rubber Room™\n\n", roomCount);
 
 	/* build each room and assign them to the world data */
-	WorldData_SetRoom(worldData, 0, RoomN_Build());
+	WorldData_SetRoom(worldData, 0, Room0_Build());
 	/* TODO REQUIRED: add rooms 1 and 2 to the world data */
-	WorldData_SetRoom(worldData, 1, RoomN_Build());
-	WorldData_SetRoom(worldData, 2, RoomN_Build());
+	WorldData_SetRoom(worldData, 1, Room1_Build());
+	WorldData_SetRoom(worldData, 2, Room2_Build());
+	WorldData_SetRoom(worldData, 3, Room3_Build());
+	WorldData_SetRoom(worldData, 4, Room4_Build());
+	WorldData_SetRoom(worldData, 5, Room5_Build());
 
 	/* TODO ADVANCED: add additional advanced rooms */
 
