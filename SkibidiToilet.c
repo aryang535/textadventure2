@@ -29,6 +29,7 @@ void RatTrap_Use(CommandContext context, GameState* gameState, WorldData* worldD
 	}
 
 	GameState_EndGame(gameState, "The Rat Trap clamps on your hand and you get a booboo and start crying.");
+	return;
 }
 
 #include "Source/WorldData.h"
@@ -48,6 +49,7 @@ void RatTrap_Drop(CommandContext context, GameState* gameState, WorldData* world
 	if (gameState->currentRoomIndex != 4)
 	{
 		GameState_EndGame(gameState, "Dropping the Rat Trap when you are not in Room 4 causes the rats to get mad at you and attack you");
+		return;
 	}
 	
 	printf("Ding Ding Ding! A new room exit has been made! East.\n");

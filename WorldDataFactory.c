@@ -138,7 +138,7 @@ Room* Room4_Build()
 
 Room* Room5_Build()
 {
-	Room* room = Room_Create("This is room 5. In this room, you see a throne. However, this throne has no one seated. It is now for you. You have won.\n");
+	Room* room = Room_Create("This is room 5. In this room, you see a throne. However, this throne has no one seated. It is now for you. You have won. Now, just explore.\n");
 
 	return room;
 }
